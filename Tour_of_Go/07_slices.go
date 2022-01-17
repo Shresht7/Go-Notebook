@@ -22,8 +22,8 @@ func showcaseSlices() {
 	primes := [6]int{2, 3, 5, 7, 11, 13}
 
 	//	Declaring a slice
-	var s []int = primes[1:4]
-	fmt.Println(s)
+	var slc []int = primes[1:4]
+	fmt.Println(slc)
 
 	//	Slices are like reference to an array
 	//	They do not store any data, they just describe a section of an underlying array
@@ -89,4 +89,29 @@ func showcaseSlices() {
 	for i := 0; i < len(board); i++ {
 		fmt.Printf("%s\n", strings.Join(board[i], " "))
 	}
+
+	var s []int
+	fmt.Println(s)
+
+	//	Go's builtin `append` function is used to add new element to slices
+	//	The first parameter is the slice and the rest the values to append to the slice
+	//	Returns a new slice contaning all the elements of the original slice and provided values
+	//	Note: if the given slice does not have the capacity to accomodate all elements, a new array will be allocated
+	//		and the returned slice will point to that array
+	s = append(s, 0)
+	fmt.Println(s)
+
+	//	We can add more than one element
+	s = append(s, 1, 2, 3, 4)
+
+	//	for loops can be used to iterate over the slice
+	for index, value := range s {
+		fmt.Printf("Index: %v Value: %v\n", index, value)
+	}
+
+	//	Unused variables are an error in Go, labeling them with _ designates them as unused
+	for _, value := range s {
+		fmt.Println(value)
+	}
+
 }
