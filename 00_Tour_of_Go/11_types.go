@@ -2,6 +2,12 @@ package main
 
 import "fmt"
 
+//	A type assertion provides access to an interface value's underlying concrete value/
+//	t = i.(T)
+//	This statement asserts that the interface value i holds the concrete type T and assigns
+//	the underlying value to variable t
+//	If i does not hold T, the statement will trigger a panic
+
 func main() {
 	var i interface{} = "hello"
 
