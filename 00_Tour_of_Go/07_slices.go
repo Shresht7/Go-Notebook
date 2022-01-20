@@ -14,13 +14,13 @@ func main() {
 //	======
 
 func showcaseSlices() {
+	//	This is an array
+	primes := [6]int{2, 3, 5, 7, 11, 13}
+	
 	//	Slices are dynamically sized arrays.
 	//	type `[]T` is a slice with elements of type T
 	//	A slice is formed by specifying two indices, a low and high bound separated by a colon
 	//	When slicing, you may omit the high or low bounds to use their defaults. (0 for low bound, length of slice for high bound)
-
-	primes := [6]int{2, 3, 5, 7, 11, 13}
-
 	//	Declaring a slice
 	var slc []int = primes[1:4]
 	fmt.Println(slc)
@@ -96,7 +96,7 @@ func showcaseSlices() {
 	//	Go's builtin `append` function is used to add new element to slices
 	//	The first parameter is the slice and the rest the values to append to the slice
 	//	Returns a new slice contaning all the elements of the original slice and provided values
-	//	Note: if the given slice does not have the capacity to accomodate all elements, a new array will be allocated
+	//	Note: if the given slice does not have the capacity to accommodate all elements, a new array will be allocated
 	//		and the returned slice will point to that array
 	s = append(s, 0)
 	fmt.Println(s)

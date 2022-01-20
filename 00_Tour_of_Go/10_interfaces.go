@@ -28,6 +28,10 @@ type Abser interface {
 	Abs() float64
 }
 
+//	Both MyFloat and Vertex satisfy the interface Abser
+
+//	---------------------------------------------------------------------------
+
 //	A type implements an interface by implementing its methods
 //	There is no explicit declartion of intent, no "implements" keyword
 //	Implicit interfaces decouple the definition of an interface from its implementation
@@ -52,7 +56,7 @@ func (f F) M() {
 }
 
 func describe(i I) {
-	fmt.Printf("(%v, %T)\n", i, i)
+	fmt.Printf("(Value: %v, Type: %T)\n", i, i)
 }
 
 func main() {
@@ -67,6 +71,11 @@ func main() {
 
 	fmt.Println(a.Abs())
 
+	//	Under the hood, interface values can be though of as a tuple of value and a concrete type
+	//	(value, type)
+	//	An interface value holds a value of a specific underlying concrete type
+	//	Calling a method on an interface value executes the method of the same name on its underlying type
+
 	var i I
 	i = &T{"Hello"}
 	describe(i)
@@ -76,3 +85,14 @@ func main() {
 	describe(i)
 	i.M()
 }
+
+//	If the concrete value inside the interface itself is nit, the method will be called with a nil receiver.
+//	Note: An interface value that holds a nil concrete value is itself not nil
+//	A nil interface holds neither value nor concrete type.
+//	Calling a method on a nil interface is a run-time error because there is no type inside the tuple.
+
+//	The interface type that specifies zero methods is known as empty interface
+//	interface{}
+//	Empty interface may hold values of any type (every type implements at least zero methods)
+//	Empty interfaces are used by code that handles values of unknown type,
+//	For example, fmt.Println takes any number of arguments of type interface{}
