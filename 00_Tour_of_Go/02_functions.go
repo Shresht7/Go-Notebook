@@ -4,13 +4,13 @@ import "fmt"
 
 //	Functions are declared using the `func` keyword
 //	They can take zero or more arguments
-//	Types come after the variable name!
+//	Types come after the variable name! @see https://go.dev/blog/declaration-syntax
 func add(x int, y int) int {
 	return x + y
 }
 
 //	If two or more consecutive named parameters share the same type
-//	then you can omit the type from all but the last paramter
+//	then you can omit the type from all but the last parameter
 func subtract(x, y int) int {
 	return x - y
 }

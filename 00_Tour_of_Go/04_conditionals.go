@@ -17,10 +17,10 @@ func main() {
 func loops() {
 	sum := 0
 
-	//	Go's only looping construct is for
+	//	Go's only looping construct is `for`
 	//	It can be used in many ways however
 	//	This is the standard initializer, condition, iterator construct
-	//	No enclosing parantheses for whatever reason. Not a fan
+	//	Note: No enclosing parantheses
 	for i := 0; i < 10; i++ {
 		fmt.Println(i)
 		sum += 1
@@ -39,28 +39,15 @@ func loops() {
 	//	If no condition is given then it loops forever...
 	for {
 		break //	...least until it breaks
-		// continue //	Also exists
+		// continue //	Continues onto the next iteration
 	}
 	fmt.Println("The sum is", sum)
 
-	//	Move to if conditions
 	ifConditions()
 }
 
 //	CONDITIONAL STATEMENTS
 //	======================
-
-func ifConditions() {
-	sqrt(4)
-	sqrt(-3)
-
-	fmt.Println(
-		pow(3, 2, 10),
-		pow(3, 3, 20),
-	)
-
-	switchStatements()
-}
 
 func sqrt(x float64) string {
 
@@ -84,6 +71,18 @@ func pow(x, n, lim float64) float64 {
 	}
 	return lim
 
+}
+
+func ifConditions() {
+	sqrt(4)
+	sqrt(-3)
+
+	fmt.Println(
+		pow(3, 2, 10),
+		pow(3, 3, 20),
+	)
+
+	switchStatements()
 }
 
 func switchStatements() {

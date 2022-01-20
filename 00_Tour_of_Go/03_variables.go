@@ -12,7 +12,7 @@ var a = 3
 
 func main() {
 
-	//	Inside a function body, `:=` syntax can be used inplace of a var declaration
+	//	Inside a function body, `:=` syntax can be used in place of a var declaration
 	walrus := true
 
 	fmt.Println(i, j, k)
