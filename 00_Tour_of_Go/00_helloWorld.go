@@ -1,4 +1,6 @@
 //	A package clause starts every source file
+package main
+
 /*
 	Every go program is made up of packages.
 	Main is a special name declaring this source file
@@ -6,7 +8,6 @@
 	Executables start running in the main package.
  	This was a multi-line comment btw
 */
-package main
 
 //	Import declarations declare library packages used in this source file
 import (
