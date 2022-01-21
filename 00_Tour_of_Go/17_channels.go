@@ -36,4 +36,14 @@ func main() {
 	x, y := <-c, <-c //	Received from c
 
 	fmt.Println(x, y)
+
+	//	Channels can be buffered by providing the buffer length as the second argument to make
+	buf := make(chan int, 2)
+	//	Sends to a buffer block only when the buffer is full
+	//	Receives block when the buffer is empty.
+	buf <- 1
+	buf <- 2
+	buf <- 3
+	fmt.Println(<-buf)
+	fmt.Println(<-buf)
 }
