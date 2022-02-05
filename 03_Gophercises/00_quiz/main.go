@@ -17,11 +17,12 @@ type Score struct {
 }
 
 func main() {
-	//	Instantiate scorecard
-	scorecard := Score{}
 
 	//	Get fileName
 	fileName := flag.String("fileName", "./problems.csv", "Problem Set")
+
+	//	Instantiate scorecard
+	scorecard := Score{}
 
 	//	Read CSV file
 	data := readCSVFile(*fileName)
@@ -37,7 +38,7 @@ func main() {
 		fmt.Scanln(&res)
 
 		//	Parse answer and user response as int
-		response, errRes := strconv.Atoi(res)
+		response, errRes := strconv.Atoi(strings.TrimSpace(res))
 		answer, errAns := strconv.Atoi(v[1])
 
 		//	If no errors while conversion
