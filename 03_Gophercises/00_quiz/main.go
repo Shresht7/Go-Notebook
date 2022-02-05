@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/csv"
+	"flag"
 	"fmt"
 	"io"
 	"log"
@@ -19,8 +20,11 @@ func main() {
 	//	Instantiate scorecard
 	scorecard := Score{}
 
+	//	Get fileName
+	fileName := flag.String("fileName", "./problems.csv", "Problem Set")
+
 	//	Read CSV file
-	data := readCSVFile()
+	data := readCSVFile(*fileName)
 
 	//	Play Quiz
 	for _, v := range data {
@@ -52,9 +56,9 @@ func main() {
 	fmt.Println("\nScored ", scorecard.correct, " out of ", scorecard.total)
 }
 
-func readCSVFile() [][]string {
+func readCSVFile(fileName string) [][]string {
 	//	Read CSV file
-	file, err := os.ReadFile("./problems.csv")
+	file, err := os.ReadFile(fileName)
 	if err != nil {
 		log.Fatal(err)
 	}
