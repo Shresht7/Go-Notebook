@@ -62,7 +62,8 @@ func readCSVFile(fileName string) [][]string {
 	//	Read CSV file
 	file, err := os.ReadFile(fileName)
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println("Failed to open csv file: ", fileName)
+		os.Exit(1)
 	}
 
 	//	Parse CSV
