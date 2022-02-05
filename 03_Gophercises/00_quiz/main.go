@@ -20,6 +20,7 @@ func main() {
 
 	//	Get fileName
 	fileName := flag.String("fileName", "./problems.csv", "Problem Set")
+	flag.Parse()
 
 	//	Instantiate scorecard
 	scorecard := Score{}
