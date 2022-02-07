@@ -1,6 +1,8 @@
 # Go Playground
 ---------------
 
+A dedicated repo for learning and experimentation.
+
 ## Resources
 
 - [Official Website](https://go.dev/)
