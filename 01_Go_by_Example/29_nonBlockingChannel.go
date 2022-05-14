@@ -4,7 +4,7 @@ import "fmt"
 
 //	Basic sends and receives on channels are blocking.
 //	However, we can use select with a default clause to implement non-blocking sends, receives and
-//	event non-blocking multi-way selects
+//	even non-blocking multi-way selects
 
 func main() {
 	messages := make(chan string)

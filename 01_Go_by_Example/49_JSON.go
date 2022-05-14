@@ -15,8 +15,8 @@ type response1 struct {
 //	Only exported fields will be encoded/decoded in JSON.
 //	Fields must start with a capital letter to be exported
 type response2 struct {
-	Page   int      `json: "page"`
-	Fruits []string `json: "fruits"`
+	Page   int      `json:"page"`
+	Fruits []string `json:"fruits"`
 }
 
 func main() {
@@ -53,7 +53,7 @@ func main() {
 	res1B, _ := json.Marshal(res1D)
 	fmt.Println(string(res1B))
 
-	//	You can use tags on struct field declration to customize the encoded JSON jey names
+	//	You can use tags on struct field declration to customize the encoded JSON key names
 	//	Check the definition of response2 above to see an example of such tags
 	res2D := &response2{
 		Page:   1,

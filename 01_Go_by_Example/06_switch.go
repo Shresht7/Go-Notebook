@@ -18,7 +18,7 @@ func main() {
 	case 3:
 		fmt.Println("three")
 	}
-	//	Note default case is options.
+	//	Note default case is optional.
 	//	Also not there is no fallthrough cases in Go. First match and exit.
 
 	//	You can use commas to separate multiple expressions in the same case statement

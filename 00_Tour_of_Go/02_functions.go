@@ -20,12 +20,12 @@ func swap(x, y string) (string, string) {
 	return y, x
 }
 
-//	Returns values can be named and are treated as variables defined at the top of the function
+//	Return values can be named and are treated as variables defined at the top of the function
 func split(sum int) (x, y int) {
 	x = sum * 4 / 9
 	y = sum - x
 	//	A return statement without arguments returns the named values. This is called 'naked' return
-	//	Should generally be used in short functions
+	//	Should generally be used only in short functions
 	return
 }
 

@@ -86,7 +86,7 @@ func main() {
 	i.M()
 }
 
-//	If the concrete value inside the interface itself is nit, the method will be called with a nil receiver.
+//	If the concrete value inside the interface itself is nil, the method will be called with a nil receiver.
 //	Note: An interface value that holds a nil concrete value is itself not nil
 //	A nil interface holds neither value nor concrete type.
 //	Calling a method on a nil interface is a run-time error because there is no type inside the tuple.
