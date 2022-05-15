@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"math/rand"
 	"os"
 	"strconv"
 	"strings"
@@ -17,13 +18,14 @@ func main() {
 	//	Get fileName
 	fileName := flag.String("fileName", "./problems.csv", "Problem Set")
 	timeLimit := flag.Int("time-limit", 20, "The Time Limit")
+	shuffle := flag.Bool("shuffle", true, "Shuffle the problem set")
 	flag.Parse()
 
 	//	Instantiate scorecard
 	correct := 0
 
 	//	Read CSV file
-	data := readCSVFile(*fileName)
+	data := readCSVFile(*fileName, *shuffle)
 
 	//	Create timer channel
 	timer := time.NewTimer(time.Duration(*timeLimit * int(time.Second)))
@@ -65,7 +67,7 @@ func main() {
 	fmt.Println("\nScored ", correct, " out of ", len(data))
 }
 
-func readCSVFile(fileName string) [][]string {
+func readCSVFile(fileName string, shuffle bool) [][]string {
 	//	Read CSV file
 	file, err := os.ReadFile(fileName)
 	if err != nil {
@@ -86,6 +88,11 @@ func readCSVFile(fileName string) [][]string {
 			log.Fatal(err)
 		}
 		data = append(data, record)
+	}
+
+	if shuffle {
+		rand.Seed(time.Now().UnixNano())
+		rand.Shuffle(len(data), func(i, j int) { data[i], data[j] = data[j], data[i] })
 	}
 
 	return data
