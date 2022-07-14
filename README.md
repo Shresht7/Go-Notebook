@@ -4,6 +4,15 @@
 - [Website][website]
 - [Documentation][documentation]
 
+## 📦 Resources
+
+- [Awesome-Go][awesome-go]
+- [Learn Go in Y minutes][learn-go-in-y-minutes]
+- [Go by Example][go-by-example]
+- [Go Web Examples][go-web-examples]
+- [Command-Line-Interfaces][cli-solutions]
+- [Web-Development][webdev-solutions]
+
 ## 📖 Learn
 
 - [Official Website][learn-go]
@@ -23,15 +32,6 @@
 - [Web Development with Go - Jon Calhoun](https://www.youtube.com/playlist?list=PLVEltXlEeWgkKucovAMCih4T0hQITxRX3)
 - [Just for Func](https://www.youtube.com/playlist?list=PL64wiCrrxh4Jisi7OcCJIUpguV_f5jGnZ)
 
-## Resources
-
-- [Learn Go in Y minutes][learn-go-in-y-minutes]
-- [Go by Example][go-by-example]
-- [Go Web Examples][go-web-examples]
-- [Command-Line-Interfaces][cli-solutions]
-- [Web-Development][webdev-solutions]
-
-
 <!-- ----- -->
 <!-- LINKS -->
 <!-- ----- -->
@@ -39,6 +39,7 @@
 [website]: https://go.dev/
 [documentation]: https://go.dev/doc
 [learn-go]: https://go.dev/learn
+[awesome-go]: https://github.com/avelino/awesome-go
 [tour-of-go]: https://go.dev/tour/list
 [learn-go-in-y-minutes]: https://learnxinyminutes.com/docs/go/
 [go-by-example]: https://gobyexample.com
